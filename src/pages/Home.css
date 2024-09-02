@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Rubik', sans-serif;
+  background-color: #e9e4d1;
+}
+
+.home-container {
+  background-image: url('/src/assets/images/barley.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-content {
+  max-width: 600px;
+  padding: 30px;
+  text-align: center; /* Centraliza o texto em telas menores */
+}
+
+h1 {
+  font-family: 'Rubik', sans-serif;
+  font-size: 2.5rem; /* Usar unidades rem para escalabilidade */
+  color: #000000;
+  margin-top: 3rem;
+  font-weight: 700;
+}
+
+h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2rem;
+  color: #6b8f23;
+  margin-bottom: 1rem;
+}
+
+.coming-soon-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.rotating-gear {
+  width: 80px; /* Tamanho reduzido para dispositivos móveis */
+  animation: rotate 4s linear infinite;
+  margin-top: 20px;
+}
+
+.rotating-gear2 {
+  width: 50px;
+  animation: rotate-left 4s linear infinite;
+  margin-bottom: 30px;
+}
+
+.maintenance {
+  display: flex;
+  align-items: center;
+  font-size: 0.8rem; /* Reduz o tamanho da fonte para telas menores */
+  font-weight: 300;
+  margin-top: 20px;
+  color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes rotate-left {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .home-content {
+    padding: 20px;
+    margin-top: 35px;
+  }
+
+  h1 {
+    font-size: 3rem; /* Reduz o tamanho do título em telas menores */
+    font-weight: 700;
+  }
+
+  .rotating-gear {
+    width: 60px; /* Reduz ainda mais as engrenagens */
+  }
+
+  .rotating-gear2 {
+    width: 40px;
+  }
+
+  .maintenance {
+    font-size: 0.7rem; /* Tamanho menor para o texto */
+    margin-top: 35px;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-content {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 1.5rem; /* Tamanho ainda menor para telas muito pequenas */
+    font-weight: 700;
+  }
+
+  .rotating-gear {
+    width: 50px;
+  }
+
+  .rotating-gear2 {
+    width: 30px;
+  }
+}
