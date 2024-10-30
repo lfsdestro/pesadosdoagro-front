@@ -1,25 +1,32 @@
 import React from 'react';
-import { images } from '../assets/images';
+import Header from '../components/Header';// Importe o Header
+import Footer from '../components/Footer';// Importe o Footer
+import AuctionItemsSection from '../components/AuctionItemsSection';// Importe o AuctionItemsSection
+import Carousel from '../components/Carousel';// Importe o Carousel
 import './Home.css';
+
+const bannerSlides = [
+  { caption: 'Descubra o melhor do leilão' },
+  { caption: 'Novos itens em breve' },
+  { caption: 'Seja bem-vindo ao VIP Leilões' },
+];
 
 const Home: React.FC = () => {
   return (
     <div className="home-container">
-      <div className="maintenance">
-          <img 
-            src={images.image1}
-            alt="Engrenagem girando" 
-            className="rotating-gear"
-          />
-          <img 
-            src={images.image1} 
-            alt="Engrenagem girando" 
-            className="rotating-gear2"
-          />
-        </div>
+      <Header /> {/* Adicione o Header aqui */}
+      <div className="parallax-banner">
+        <Carousel slides={bannerSlides} />
+      </div>
         <div className="home-content">
-          <h1>Em Construção...</h1>
+        <div className="parallax-image"></div>
+        <div className="banner-content">
+          <h1>Bem-vindo ao Leilão Online</h1>
+          <p>Encontre os melhores itens disponíveis!</p>
         </div>
+        <AuctionItemsSection /> {/* Adicione os cards aqui */}
+        </div>
+        <Footer /> {/* Adiciona o Footer no final da página */}
     </div>
   );
 };

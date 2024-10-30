@@ -8,27 +8,132 @@ body {
 }
 
 .home-container {
-  background-image: url('/src/assets/images/barley.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  width: 100vw;
-  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100vw; /* Garante que ocupe 100% da largura */
+  background-color: #07332b;
+}
+
+.header-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  position: fixed; /* Fixa o header no topo */
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.parallax-banner {
+  position: relative;
+  height: 400px;
   display: flex;
   justify-content: center;
   align-items: center;
+  color: white;
+  text-align: center;
+  font-size: 1.5rem;
+  z-index: 1;
+}
+
+.parallax-image {
+  /* Define a imagem do banner e o efeito de parallax */
+  background-image: url('../assets/images/banner-image.jpg'); /* Substitua pelo caminho correto da imagem */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed; /* Este é o efeito parallax */
+  z-index: -1;
+}
+
+.banner-content {
+  position: relative;
+  z-index: 1;
+}
+
+.banner-content h1 {
+  font-size: 3rem;
+  margin: 0;
+}
+
+.banner-content p {
+  font-size: 1.2rem;
+}
+
+.logo {
+  height: 50px;
+  margin-right: 20px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 15px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #007bff;
+  font-size: 14px;
+}
+
+.nav-links a:hover {
+  color: #0056b3;
+}
+
+.header-right {
+  display: flex;
+  gap: 10px;
+}
+
+.login-btn, .download-btn {
+  background-color: #00b2ff;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.login-btn:hover {
+  background-color: #009bdf;
+}
+
+.download-btn {
+  background-color: #00e0ff;
+}
+
+.download-btn:hover {
+  background-color: #00b2ff;
 }
 
 .home-content {
   max-width: 600px;
   padding: 30px;
-  text-align: center; /* Centraliza o texto em telas menores */
+  text-align: center;
+  margin-top: 120px; /* Ajuste necessário para evitar sobreposição com o header fixo */
 }
 
 h1 {
   font-family: 'Rubik', sans-serif;
-  font-size: 2.5rem; /* Usar unidades rem para escalabilidade */
-  color: #000000;
+  font-size: 2.5rem;
+  color: #ffffff;
   margin-top: 3rem;
   font-weight: 700;
 }
@@ -48,7 +153,7 @@ h2 {
 }
 
 .rotating-gear {
-  width: 80px; /* Tamanho reduzido para dispositivos móveis */
+  width: 80px;
   animation: rotate 4s linear infinite;
   margin-top: 20px;
 }
@@ -61,8 +166,9 @@ h2 {
 
 .maintenance {
   display: flex;
+  justify-content: center;
   align-items: center;
-  font-size: 0.8rem; /* Reduz o tamanho da fonte para telas menores */
+  font-size: 0.8rem;
   font-weight: 300;
   margin-top: 20px;
   color: white;
@@ -87,19 +193,20 @@ h2 {
   }
 }
 
+/* Ajustes para telas menores */
 @media (max-width: 768px) {
   .home-content {
     padding: 20px;
-    margin-top: 35px;
+    margin-top: 150px; /* Ajuste para telas menores */
   }
 
   h1 {
-    font-size: 3rem; /* Reduz o tamanho do título em telas menores */
+    font-size: 2rem;
     font-weight: 700;
   }
 
   .rotating-gear {
-    width: 60px; /* Reduz ainda mais as engrenagens */
+    width: 60px;
   }
 
   .rotating-gear2 {
@@ -107,19 +214,34 @@ h2 {
   }
 
   .maintenance {
-    font-size: 0.7rem; /* Tamanho menor para o texto */
+    font-size: 0.7rem;
     margin-top: 35px;
+  }
+
+  .header-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .login-btn, .download-btn {
+    width: 100%;
+    text-align: center;
   }
 }
 
 @media (max-width: 480px) {
   .home-content {
     padding: 10px;
+    margin-top: 180px; /* Ajuste para telas muito pequenas */
   }
 
   h1 {
-    font-size: 1.5rem; /* Tamanho ainda menor para telas muito pequenas */
-    font-weight: 700;
+    font-size: 1.5rem;
   }
 
   .rotating-gear {
@@ -128,5 +250,9 @@ h2 {
 
   .rotating-gear2 {
     width: 30px;
+  }
+
+  .nav-links {
+    gap: 10px;
   }
 }

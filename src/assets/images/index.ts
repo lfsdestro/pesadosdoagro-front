@@ -1,7 +1,9 @@
 import image1 from './gear2.svg';
-import brackgroundImage from './barley.jpg';
+import image2 from './em-breve.jpeg';
+import image3 from './logo.png';
 
 export const images = {
   image1,
-  brackgroundImage
+  image2,
+  image3
 };

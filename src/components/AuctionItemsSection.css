@@ -1,0 +1,25 @@
+.auction-items-section {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 35px;
+    margin-bottom: 100px !important;
+  }
+  
+  .auction-card {
+    border: 1px solid #ccc;
+    padding: 16px;
+    text-align: center;
+    background-color: #f9f9f9;
+  }
+  
+  .auction-card-image {
+    width: 100px;
+    height: auto;
+    margin-bottom: 12px;
+  }
+  
+  .auction-card-price {
+    font-weight: bold;
+    color: #212121;
+  }
+  
